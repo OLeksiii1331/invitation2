@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>прикольчик</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #f4c7c7; /* Ніжно-рожевий колір */
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #f7a6a6; /* Трохи яскравіший відтінок рожевого при наведенні */
+        }
+
+        .yes-btn {
+            background-color: #f4c7c7;
+        }
+
+        .no-btn {
+            background-color: #f4c7c7;
+        }
+
+        .message {
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+            display: none;
+        }
+
+        /* Кнопка "Ні" зникає при наведенні мишкою */
+        .no-btn:hover {
+            visibility: hidden;
+            transform: scale(0.8);
+        }
+
+        img {
+            width: 200px; /* Розмір картинки */
+            margin-bottom: 20px; /* Відступ від картинки */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Початкова картинка -->
+        <img id="invitation-img" src="image.jpg" alt="прикольчик">
+
+        <h1>Привіт, Владік! А ти не хотів би зустрітися?</h1>
+        <div class="button-container">
+            <button class="yes-btn" onclick="showYes()">Так</button>
+            <button class="no-btn" onclick="showNo()">Ні</button>
+        </div>
+        <p id="message" class="message"></p>
+    </div>
+
+    <script>
+        // Функція для відображення повідомлення, якщо вибрано "Так"
+        function showYes() {
+            document.getElementById('message').innerText = "Ураааа, давай домовлятися на коли! Напиши мені в інстаграм <3";
+            document.getElementById('message').style.display = "block";
+
+            // Зміна картинки при натисканні "Так"
+            document.getElementById('invitation-img').src = "2024-12-07 00.08.45.jpg";  // Замінити на URL картинки для "Так"
+        }
+
+        // Функція для відображення повідомлення, якщо вибрано "Ні"
+        function showNo() {
+            document.getElementById('message').innerText = "Блін, шкода! Але напиши мені в інстаграм, що ти натиснув 'ні'.";
+            document.getElementById('message').style.display = "block";
+
+            // Зміна картинки при натисканні "Ні"
+            document.getElementById('invitation-img').src = "2024-12-07 00.08.52.jpg";  // Замінити на URL картинки для "Ні"
+        }
+    </script>
+</body>
+</html>
